@@ -1,11 +1,10 @@
-name: Our Workflow
-on: push
+name: learn-github-actions
+on: [push]
 jobs:
-  checkout:
+  check-bats-version:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-        with:
-          path: our-source
-      - run: ls -al
-      - run: ls -al our-source
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+      - run: npm install -g bats
+      - run: bats -v

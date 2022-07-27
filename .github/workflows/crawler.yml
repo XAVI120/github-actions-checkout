@@ -21,4 +21,4 @@
         run: |
           python crawler.py
         env:
-          MY_GITHUB_TOKEN: ${{ secrets.TEST }}
+          MY_GITHUB_TOKEN: ${{ secrets.test }}

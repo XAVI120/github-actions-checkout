@@ -2,7 +2,7 @@
   
   on:
     schedule:
-      - cron: '0 8 * * *'
+      - cron: '30 8 * * *'
       
   jobs:
     build:
@@ -21,4 +21,4 @@
         run: |
           python crawler.py
         env:
-          MY_GITHUB_TOKEN: ${{ secrets.test }}
+          MY_GITHUB_TOKEN: ${{ secrets.TEST }}

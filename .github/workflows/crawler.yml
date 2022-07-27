@@ -1,5 +1,5 @@
   name: yes24_crawler
-	
+  
   on:
     schedule:
       - cron: '0 0 * * *'
@@ -8,9 +8,9 @@
     build:
       runs-on: ubuntu-latest
       steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v2
       - name: Set up Python
-        uses: actions/setup-python@v3
+        uses: actions/setup-python@v2
         with:
           python-version: 3.7
       - name: Install dependencies
@@ -21,4 +21,4 @@
         run: |
           python crawler.py
         env:
-          MY_GITHUB_TOKEN: \$
+          MY_GITHUB_TOKEN: ${{ secrets.MY_GITHUB_TOKEN }}
